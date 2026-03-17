@@ -168,7 +168,7 @@ export function createScene(canvas?: HTMLCanvasElement) {
   const overlay = document.createElement('div')
   overlay.className = 'earth-overlay'
   overlay.innerHTML = `
-    <p class="earth-message">We are but a speck in a vast cosmic ocean. Zoom out to see our Local Group of galaxies. You can find our home here(pale blue dot)..Each galaxy has billions of stars and planets. Each dots you see on the background are stars, galaxies, and local groups of galaxies.</p>
+    <p class="earth-message">We are but a speck in a vast cosmic ocean. Zoom out to see our Local Group of galaxies. You can find our home here(pale blue dot)..Each galaxy has billions of stars and planets. Each dots you see on the background are stars, galaxies, and local group of galaxies.</p>
     <button type="button" class="earth-btn" id="find-earth">Show True Scale</button>
   `
   app.appendChild(overlay)
