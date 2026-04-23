@@ -188,3 +188,46 @@ body {
 .hidden-label {
   display: none !important;
 }
+
+/* Settings Indicator */
+.settings-indicator {
+  position: absolute;
+  top: 45px;
+  right: 15px;
+  width: 245px;
+  color: rgba(200, 230, 255, 0.9);
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  pointer-events: none;
+  z-index: 20;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.finger-icon {
+  font-size: 1.5rem;
+  animation: bounceUp 1.5s ease-in-out infinite;
+  text-shadow: 0 2px 8px rgba(187, 170, 255, 0.8);
+}
+
+.indicator-text {
+  animation: pulseIndicatorText 2s ease-in-out infinite;
+}
+
+@keyframes bounceUp {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulseIndicatorText {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}

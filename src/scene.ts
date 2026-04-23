@@ -153,6 +153,26 @@ export function createScene(canvas?: HTMLCanvasElement) {
   bloomFolder.add(state, 'bloomThreshold', 0, 1, 0.02).name('Threshold')
   gui.close()
 
+  // Settings Indicator
+  const settingsIndicator = document.createElement('div')
+  settingsIndicator.className = 'settings-indicator'
+  settingsIndicator.innerHTML = `
+    <span class="finger-icon">👆</span>
+    <span class="indicator-text">Adjust Universe Properties</span>
+  `
+  app.appendChild(settingsIndicator)
+
+  // Hide indicator when user interacts with GUI
+  gui.domElement.addEventListener('click', () => {
+    settingsIndicator.style.transition = 'opacity 0.5s'
+    settingsIndicator.style.opacity = '0'
+    setTimeout(() => {
+      if (settingsIndicator.parentNode) {
+        settingsIndicator.parentNode.removeChild(settingsIndicator)
+      }
+    }, 500)
+  }, { once: true })
+
   window.addEventListener('resize', () => {
     const w = window.innerWidth
     const h = window.innerHeight
