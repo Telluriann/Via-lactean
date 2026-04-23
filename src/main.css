@@ -20,6 +20,82 @@ body {
   position: relative;
 }
 
+/* Animated Title Overlay */
+.title-container {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 20;
+  text-align: left;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.animated-title {
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  animation: floatTitle 6s ease-in-out infinite;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+.text-glow {
+  background: linear-gradient(90deg, #ffffff, #bbaaff, #ffffff, #99ddff, #ffffff);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shine 5s linear infinite;
+  text-shadow: 0 0 30px rgba(187, 170, 255, 0.5);
+  display: inline-block;
+}
+
+.title-underline {
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(187, 170, 255, 0.8), transparent);
+  animation: expandUnderline 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes floatTitle {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes expandUnderline {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+
+  to {
+    width: 110%;
+    opacity: 1;
+  }
+}
+
 /* Earth overlay — "You are here" message */
 .earth-overlay {
   position: absolute;
